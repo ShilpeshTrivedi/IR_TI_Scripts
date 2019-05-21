@@ -6,9 +6,8 @@ import dns.reversename
 
 print ('\n')
 print (' ++++++++++++++++++++++++++++++++++++++++')
-print (' + Author:- HDFC IR TEAM                +')
 print (' + Title :- Multiple Reverse DNS Lookup +')
-print (' + Written By: Shilpesh Trivedi         +')
+print (' + Auther: Shilpesh Trivedi             +')
 print (' ++++++++++++++++++++++++++++++++++++++++')
 print ('\n')
 
