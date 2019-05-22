@@ -39,6 +39,11 @@ for x in a:
 		f.write('\n')
 		f.write(str(x)+',Domain Name Not Found')
 		print '\t Domain Name Not Found...'
+		
+	except dns.resolver.NoNameservers:
+		f.write('\n')
+		f.write(str(x)+',No Name Servers')
+		print '\t No Name Servers...'
 	
 	except dns.resolver.Timeout:
 		f.write('\n')
