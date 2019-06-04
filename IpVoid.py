@@ -1,3 +1,5 @@
+#Python 3.6
+
 import unicodedata
 import requests
 import re
