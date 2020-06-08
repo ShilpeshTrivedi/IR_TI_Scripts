@@ -1,3 +1,5 @@
+#Pyton2.7
+
 import time
 import json 
 import urllib
@@ -9,12 +11,12 @@ class LookUP(object):
         
 	def __init__(self):
 
-                self.VT_api = "fa58ffe6784cdde787f739578c83f6a6269f339882095666e7d195125c373f1f" # Enter here your VT API key
+                self.VT_api = "" # Enter here your VT API key
                 self.VT_base = "https://www.virustotal.com/vtapi/v2/"
 
-                self.IBM_base = "https://api.xforce.ibmcloud.com:443"   # Enter here your IBM Base key
-                self.IBM_api = "7ebd8514-af39-4e43-b348-8d8f2bcdc3a1"   # Enter here your IBM API key
-                self.IBM_pass = "6bdf0743-8c8d-47ee-9d5b-3fabcd2ea462"  # Enter here your IBM Password
+                self.IBM_base = "https://api.xforce.ibmcloud.com:443"   
+                self.IBM_api = ""   # Enter here your IBM API key
+                self.IBM_pass = ""  # Enter here your IBM Password
 
 	def VirusTotal (self,data):
 
