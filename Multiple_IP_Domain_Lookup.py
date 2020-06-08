@@ -64,7 +64,7 @@ class LookUP(object):
 
 if __name__ == '__main__':
 
-    VM_Obj = LookUP()
+    TI_Obj = LookUP()
 
     print '+++++++++++++++++++++++++++++++++++++++++'
     print '+ Multiple IP/Domain Reputation Check   +'
@@ -85,8 +85,8 @@ if __name__ == '__main__':
 
     for i,data in enumerate(fp):
 
-        VT_OP = VM_Obj.VirusTotal(data)
-        IBM_OP = VM_Obj.IBM(data)
+        VT_OP = TI_Obj.VirusTotal(data)
+        IBM_OP = TI_Obj.IBM(data)
 
         if i%4==0 and i!=0:
 
