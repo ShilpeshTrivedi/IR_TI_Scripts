@@ -26,13 +26,13 @@ class LookUP(object):
                 response = int(json_response.get('response_code'))
 
                 if response == 0:
-                        return 'URL Not Found'
+                        return 'Not Found'
                         
                 elif response == 1:
                         positives = int(json_response.get('positives'))
                 
                         if positives == 0:
-                            print ('URL Is Not Malicious In VirusTotal')
+                            return 'Not Malicious'
                         else:
                             positives= int(json_response.get('positives'))
                             total= int(json_response.get('total'))
@@ -57,7 +57,7 @@ class LookUP(object):
                                         return score
                            
                 except Exception, er:
-                        return 'URL Not Malicious In IBM X-Force'
+                        return 'Not Malicious'
 
 
 
