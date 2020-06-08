@@ -92,7 +92,7 @@ if __name__ == '__main__':
 
             print '\t'+data.rstrip('\n'),'->','VirusTotal Score =',VT_OP,', IBM X-Force Score =',IBM_OP
             file_cvs.write(data.rstrip('\n')+','+str(VT_OP)+','+str(IBM_OP)+'\n')
-            time.sleep(10)
+            time.sleep(20)
 
         else:
             print '\t'+data.rstrip('\n'),'->','VirusTotal Score =',VT_OP,', IBM X-Force Score =',IBM_OP
