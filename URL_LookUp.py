@@ -11,7 +11,7 @@ class LookUP(object):
         
 	def __init__(self):
 
-                self.VT_api = "" # Enter here your VT API key
+                self.VT_api = "" # Enter here your VirusTotal API key
                 self.VT_base = "https://www.virustotal.com/vtapi/v2/"
 
                 self.IBM_base = "https://api.xforce.ibmcloud.com:443"   
@@ -62,7 +62,6 @@ class LookUP(object):
 
 
 if __name__ == '__main__':
-
 
     VM_Obj = LookUP()
 
