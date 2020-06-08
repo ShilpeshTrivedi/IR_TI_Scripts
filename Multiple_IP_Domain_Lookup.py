@@ -33,6 +33,7 @@ class LookUP(object):
                 
                         if positives == 0:
                             return 'Not Malicious'
+		
                         else:
                             positives= int(json_response.get('positives'))
                             total= int(json_response.get('total'))
@@ -50,7 +51,7 @@ class LookUP(object):
 
                 try:
                         for key in json_response['result']:
-
+				
                                 if 'score' in key:
                                         score = str(json_response['result']['score'])
                                         
