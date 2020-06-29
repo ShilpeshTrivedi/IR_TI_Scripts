@@ -1,3 +1,6 @@
+#!/usr/bin/Python2
+#Author Shilpesh Trivedi
+
 import sys
 import json
 import requests
@@ -6,7 +9,7 @@ class MalPedia(object):
 
         def __init__(self):
                 
-                self.key = "" # # Enter Your API Key Here
+                self.key = "" #Enter Your API Key Here
                 self.base = "https://malpedia.caad.fkie.fraunhofer.de/api"
 
 
