@@ -1,6 +1,5 @@
 import sys
 import json
-import pprint
 import requests
 
 class MalPedia(object):
@@ -40,4 +39,4 @@ if __name__ == '__main__':
                 FileName = sys.argv[1]
                 MalPedia().ScanBinary(FileName)
         except:
-                print ('\tFile Name Must Required as a Argument\n')
+                print '\tFile Name Must Required as a Argument\n'
