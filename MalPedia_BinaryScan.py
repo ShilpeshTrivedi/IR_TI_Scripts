@@ -7,7 +7,7 @@ class MalPedia(object):
 
         def __init__(self):
                 
-                self.key = "e3675f6ab71d61793f1c690f709ab883e03eb3d4" 
+                self.key = "" # # Enter Your API Key Here
                 self.base = "https://malpedia.caad.fkie.fraunhofer.de/api"
 
 
