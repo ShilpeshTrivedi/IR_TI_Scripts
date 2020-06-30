@@ -71,7 +71,7 @@ if __name__ == '__main__':
     print '+                  By: Shilpesh Trivedi +'
     print '+++++++++++++++++++++++++++++++++++++++++'
 
-    file_cvs=open('IP/Domain_Lookup_OutPut.csv','a')
+    file_cvs=open('IP_Domain_Lookup_OutPut.csv','a')
     file_cvs.write('IP/Domain,VirusTotal Score,IBM X-Force Score,\n')
 
     try: 
