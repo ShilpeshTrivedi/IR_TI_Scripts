@@ -1,9 +1,7 @@
 #Pyton2.7
 
 import time
-import json 
-import urllib
-import urllib2
+import json
 import requests
 import base64
 
