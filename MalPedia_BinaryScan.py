@@ -42,4 +42,4 @@ if __name__ == '__main__':
                 FileName = sys.argv[1]
                 MalPedia().ScanBinary(FileName)
         except:
-                print '\tFile Name Must Required as a Argument\n'
+                print '\tBinary File Name Must Required as a Argument\n'
