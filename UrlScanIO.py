@@ -1,7 +1,6 @@
 #!/usr/bin/Python2
 #Author Shilpesh Trivedi
 
-
 import sys
 import time
 import json
