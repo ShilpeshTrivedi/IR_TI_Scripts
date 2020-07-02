@@ -13,7 +13,7 @@ class UrlScanIO(object):
 
 	def __init__(self):
 
-		self.key = "402b87ad-e4a1-4220-9d0b-a4f1d7eadd0e"
+		self.key = "" #Enter Your API Key Here
 		self.base = "https://urlscan.io/api/v1"
 		self.header = {'Content-Type ': 'application/json','API-Key': self.key,}
 		self.urlss = 'https://urlscan.io/screenshots/'
@@ -65,7 +65,5 @@ if __name__ == '__main__':
                 UrlScanIO().SubmitURL(Url)
         except:
                 print '\tUrl\\Domain Must Required as a Argument\n'
-
-#UrlScanIO().SubmitURL("https://urlscan.io/result/0ab7241c-cc9e-48a8-a28a-39a51f562402")
 
 		
