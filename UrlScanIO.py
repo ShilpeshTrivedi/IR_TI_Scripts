@@ -37,8 +37,7 @@ class UrlScanIO(object):
 
 			uuid = Json_Data['uuid']
 
-			print '\n\t [*] This Sript Will takes only 30 Second to run, OutPut Will Store as Screenshots\n'
-
+			print '\n\t [*] This Sript Will takes only 30 Seconds to Execute, OutPut Will Store as Screenshots\n'
 
 			time.sleep(30)
 			
