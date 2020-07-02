@@ -18,7 +18,6 @@ class UrlScanIO(object):
 		self.header = {'Content-Type ': 'application/json','API-Key': self.key,}
 		self.urlss = 'https://urlscan.io/screenshots/'
 
-
 	def SubmitURL(self,submiturl):
 
 		url = '/scan/'
@@ -32,7 +31,6 @@ class UrlScanIO(object):
 		OutPut = response.content.decode("utf-8")
 
 		try:
-			
 			Json_Data = json.loads(OutPut)
 
 			uuid = Json_Data['uuid']
@@ -44,10 +42,10 @@ class UrlScanIO(object):
 			urllib.urlretrieve(self.urlss+uuid+'.png',uuid+'.png')
 
 			print '\t [*] Please see',uuid+'.png\n'
+			
 			print '\t [*] For More Click ','https://urlscan.io/result/'+uuid,'\n'
 
 		except:
-
 			print '\n\t [*]',Json_Data['description'],'\n'
 
 
@@ -62,6 +60,7 @@ if __name__ == '__main__':
                 Url = sys.argv[1]
                 print '\t [*] Subited Url:',Url
                 UrlScanIO().SubmitURL(Url)
+		
         except:
                 print '\tUrl\\Domain Must Required as a Argument\n'
 
