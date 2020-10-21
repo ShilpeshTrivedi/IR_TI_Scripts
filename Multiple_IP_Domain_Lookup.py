@@ -83,16 +83,19 @@ if __name__ == '__main__':
 
     for i,data in enumerate(fp):
 
-        VT_OP = TI_Obj.VirusTotal(data)
-        IBM_OP = TI_Obj.IBM(data)
-
         if i%4==0 and i!=0:
+		
+		VT_OP = TI_Obj.VirusTotal(data)
+        	IBM_OP = TI_Obj.IBM(data)
 
-            print '\t'+data.rstrip('\n'),'->','VirusTotal Score =',VT_OP,', IBM X-Force Score =',IBM_OP
-            file_cvs.write(data.rstrip('\n')+','+str(VT_OP)+','+str(IBM_OP)+'\n')
-            time.sleep(60)
+		print '\t'+data.rstrip('\n'),'->','VirusTotal Score =',VT_OP,', IBM X-Force Score =',IBM_OP
+		file_cvs.write(data.rstrip('\n')+','+str(VT_OP)+','+str(IBM_OP)+'\n')
+		time.sleep(60)
 
         else:
-            print '\t'+data.rstrip('\n'),'->','VirusTotal Score =',VT_OP,', IBM X-Force Score =',IBM_OP
-            file_cvs.write(data.rstrip('\n')+','+str(VT_OP)+','+str(IBM_OP)+'\n')
+		VT_OP = TI_Obj.VirusTotal(data)
+        	IBM_OP = TI_Obj.IBM(data)
+		
+            	print '\t'+data.rstrip('\n'),'->','VirusTotal Score =',VT_OP,', IBM X-Force Score =',IBM_OP
+            	file_cvs.write(data.rstrip('\n')+','+str(VT_OP)+','+str(IBM_OP)+'\n')
         
