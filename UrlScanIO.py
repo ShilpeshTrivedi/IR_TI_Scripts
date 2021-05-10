@@ -7,15 +7,15 @@ import json
 import urllib
 import requests
 
-
 class UrlScanIO(object):
 
 	def __init__(self):
 
-		self.key = "" #Enter Your API Key Here
+		self.key = "" #Enter Yor API Key Here
 		self.base = "https://urlscan.io/api/v1"
 		self.header = {'Content-Type ': 'application/json','API-Key': self.key,}
 		self.urlss = 'https://urlscan.io/screenshots/'
+
 
 	def SubmitURL(self,submiturl):
 
@@ -30,22 +30,40 @@ class UrlScanIO(object):
 		OutPut = response.content.decode("utf-8")
 
 		try:
+
 			Json_Data = json.loads(OutPut)
+
 
 			uuid = Json_Data['uuid']
 
-			print '\n\t [*] This Sript Will takes only 30 Seconds to Execute, OutPut Will Store as Screenshots\n'
-
+			
 			time.sleep(30)
 			
 			urllib.urlretrieve(self.urlss+uuid+'.png',uuid+'.png')
 
-			print '\t [*] Please see',uuid+'.png\n'
+			print '\n\t [*] GUI Websit Snaphost sava as ',uuid+'.png'
 			
-			print '\t [*] For More Click ','https://urlscan.io/result/'+uuid,'\n'
+			print '\n\t [*] For More Click ','https://urlscan.io/result/'+uuid,'\n'
+
+			dom = requests.get("https://urlscan.io/api/v1/result/%s/" % uuid,headers=header)
+
+			ou = dom.content.decode("utf-8")
+
+			J_Data = json.loads(ou)
+
+			Malicious = J_Data['verdicts']['urlscan']['malicious']
+
+			Score = J_Data['verdicts']['urlscan']['score']
+
+			Categories_temp = str(J_Data['verdicts']['urlscan']['categories'])
+
+			Categories = Categories_temp.replace("u'",'').replace('[','').replace(']','').replace("'",'')
+
+			print '\t [*] Url Scan Result -> Malicious = ',Malicious, ', Score = ',Score, ', Categories = ',Categories,'\n'
 
 		except:
-			print '\n\t [*]',Json_Data['description'],'\n'
+
+			print '\t[*] ',Json_Data['description'],'\n'
 
 
 if __name__ == '__main__':
@@ -56,11 +74,10 @@ if __name__ == '__main__':
         print ' +++++++++++++++++++++++++++++++++\n'
 
         try:
-                Url = sys.argv[1]
-                print '\t [*] Subited Url:',Url
-                UrlScanIO().SubmitURL(Url)
-		
-        except:
-                print '\tUrl\\Domain Must Required as a Argument\n'
+	        Url = sys.argv[1]
+	        print '\t [*] This Sript Will takes only 30 Second to run'
+	        print '\n\t [*] Subited Url:',Url
+	        UrlScanIO().SubmitURL(Url)
 
-		
+        except:
+                print '\t [*] Url/Domain Must Required as a Argument\n'
