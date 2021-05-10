@@ -41,7 +41,7 @@ class UrlScanIO(object):
 			
 			urllib.urlretrieve(self.urlss+uuid+'.png',uuid+'.png')
 
-			print '\n\t [*] GUI Websit Snaphost sava as ',uuid+'.png'
+			print '\n\t [*] GUI Websit Snaphost sava as',uuid+'.png'
 			
 			print '\n\t [*] For More Click ','https://urlscan.io/result/'+uuid,'\n'
 
