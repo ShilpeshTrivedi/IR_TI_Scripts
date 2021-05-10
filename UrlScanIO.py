@@ -16,7 +16,6 @@ class UrlScanIO(object):
 		self.header = {'Content-Type ': 'application/json','API-Key': self.key,}
 		self.urlss = 'https://urlscan.io/screenshots/'
 
-
 	def SubmitURL(self,submiturl):
 
 		url = '/scan/'
@@ -33,9 +32,7 @@ class UrlScanIO(object):
 
 			Json_Data = json.loads(OutPut)
 
-
 			uuid = Json_Data['uuid']
-
 			
 			time.sleep(30)
 			
