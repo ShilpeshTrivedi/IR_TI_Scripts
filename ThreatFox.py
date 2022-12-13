@@ -67,8 +67,6 @@ def ThreatFox(days):
 
         file_csv.write(str(jsn['ioc'])+','+str(jsn['malware_printable'])+'\n')
 
-    j_data = json.loads(json.dumps(OrderedDict(Counter(malware).most_common())))
-
     new_data = dict(sorted(Counter(malware).items(), key=lambda kv:kv[1], reverse=True))
 
     for key,value in new_data.items():
