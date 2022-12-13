@@ -4,39 +4,34 @@
 '''
 Output of the script 
 
-Python3 ThreatFox.py 1
-
   +++++++++++++++++++++++++++++++++++++++++++ 
  + ThreatFox IOC Collector                   +
  +                                           +
  +          By: Shilpesh Trivedi             +
  +          URL: https://threatfox.abuse.ch/ +
-  +++++++++++++++++++++++++++++++++++++++++++
+  +++++++++++++++++++++++++++++++++++++++++++ 
 
  [*] Malware family statistics for last 1 days :
-
-{   'Agent Tesla': 1,
-    'Alien': 3,
-    'Anatsa': 2,
-    'Aurora Stealer': 1,
-    'Bashlite': 1,
-    'Cobalt Strike': 61,
-    'FAKEUPDATES': 1,
-    'Hydra': 1,
-    'IcedID': 2,
-    'JSSLoader': 3,
-    'LockBit': 1,
-    'Loki Password Stealer (PWS)': 1,
-    'Mirai': 2,
-    'Nanocore RAT': 1,
-    'PhotoLoader': 2,
-    'QakBot': 4,
-    'Raccoon': 14,
-    'RedLine Stealer': 14,
-    'Unknown malware': 7,
-    'Vidar': 9}
+  |
+  |_[+] QakBot = 503
+  |_[+] Cobalt Strike = 64
+  |_[+] Unknown malware = 7
+  |_[+] Vidar = 7
+  |_[+] IcedID = 3
+  |_[+] Alien = 3
+  |_[+] JSSLoader = 3
+  |_[+] Loki Password Stealer (PWS) = 2
+  |_[+] Anatsa = 2
+  |_[+] PhotoLoader = 2
+  |_[+] Hydra = 1
+  |_[+] FAKEUPDATES = 1
+  |_[+] LockBit = 1
+  |_[+] Agent Tesla = 1
+  |_[+] Nanocore RAT = 1
+  |_[+] Mirai = 1
 
  [+] Indicator has been written in => ThreatFox_IOC.csv <= file
+
 '''
 
 import sys
@@ -74,7 +69,11 @@ def ThreatFox(days):
 
     j_data = json.loads(json.dumps(OrderedDict(Counter(malware).most_common())))
 
-    pprint (j_data,depth=1, indent=4)
+    new_data = dict(sorted(Counter(malware).items(), key=lambda kv:kv[1], reverse=True))
+
+    for key,value in new_data.items():
+
+        print ("  |_[+]",key,'=',value,)
 
     print ('\n [+] Indicator has been written in => ThreatFox_IOC.csv <= file\n')
 
@@ -96,7 +95,7 @@ if __name__ == '__main__':
 
         if int(days) <= 7 :
 
-            print (' [*] Malware family statistics for last',days,'days :\n')
+            print (' [*] Malware family statistics for last',days,'days :\n  |')
 
             ThreatFox(days)
 
@@ -107,4 +106,3 @@ if __name__ == '__main__':
     except:
 
         print (" [-] please add day's which should be in number or integer\n")
-
